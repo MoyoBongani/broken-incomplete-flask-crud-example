@@ -62,7 +62,7 @@ def deletePage():
     return render_template("delete.html")
 
 
-app.route("/read", methods=['GET', 'POST']) #Default - Show Data
+@app.route("/read", methods=['GET', 'POST']) #Default - Show Data
 def read(): # Name of the method
     cur = mysql.connection.cursor() #create a connection to the SQL instance
     cur.execute('''SELECT * FROM students''') # execute an SQL statment
